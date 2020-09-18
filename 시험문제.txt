@@ -1,0 +1,198 @@
+<<<<<<<<<<<<<기억나는시험문제>>>>>>>>>>>>>>
+
+화면구성하는데 좋은 것?
+
+Tomcat에 대한 설명 중 바르지않은것?
+
+Servlet에 대한 설명 중바르지않은것?
+
+Doget 파라미터 올바른것은?
+	doGet(HttpServletRequest req, HttpServletResponse resp)
+
+Servlet 변수 문제
+
+form 태그 속성
+	name
+ 	method
+ 	action
+ 	encType
+
+jsp 수행 흐름 설명  중 바르지 않은 것?
+
+jsp 언어에 대한 설명 중 바르지않은것?
+
+jsp 태그가 아닌 것은?
+	#scirptlet(스크립트릿)	<-- 내장 객체 out
+	<% %>
+	#선언식			<-- 메소드 , 변수 선언
+	<%! %>
+	#지시자			<-- jsp 실행시, 처음 구성 ==> 시험문제)
+		 page : jsp 설정(import)
+		 include : 다른 page 포함
+		 taglib :태그 library 사용할때
+		 jsp 주석은 앞단에서 못봄
+	<%@ %>
+	#표현식			<-- <% out,.print() %> 출력
+	<%= %>
+	#주석문
+	<%-- --%>
+
+<%= %>는 무슨 식?
+	표현식
+
+get방식 post방식 차이
+
+쿠키와 세션 관련
+
+java bean 액션 코드 관련 문제
+
+servlet 반드시 상속받아야하는 클래스
+	HttpServlet 클래스
+
+get 방식에서 아이디 pw 넣었을때 쿼리스트링으로 url이 어떻게 생기는지
+	ex)	
+	id : jane
+	pw : ssssss 넣었을대
+	http://localhost:8090/pro06/login?user_id=jane&user_pw=ssssss
+
+데이터저장소덩어리?
+
+jdbc 관련
+	JDBC
+	JDBC Driver : 하나하나의 명칭
+	*)정답 순서 모르겠...
+
+jsp태그 어떤 화면 출력?(주석문, 테이블과 표현식 관련 문제 / 어떤 테이블로 어떤숫자가 나오는가??)
+	<!-- --> : HTML 주석
+	<@-- --@> : jsp 주석
+	/* */ : java 주석
+
+	for문
+	number 1
+	number 2
+	number 3
+
+
+-------------------------------------------------------------------------------------------------
+<<<<<<<<<<수업 메모>>>>>>>>>>
+
+doGet(HttpServletRequest req, HttpServletResponse resp)
+
+Servlet이 반드시 상속받는 것 ->  HttpServlet 클래스
+
+servlet 생명 주기 메소드
+ init()
+ service()
+ doGet()
+ doPost()
+ destory()
+
+서블릿의 동작 과정
+ 사용자 정의 서블릿 클래스 만들기
+ -> 서블릿 생명주기 메서드 구현
+ -> 서블릿 매핑 작업
+ -> 웹 브라이저에서 서블릿 매핑 이름으로 요청하기
+
+
+servlet 매핑
+ - web.xml 에서 직접 매핑
+ - java 파일에서 @WebServlet("/third") 작성
+
+
+form 태그 속성
+ name
+ method
+ action
+ encType
+
+
+
+HTML 태그에서 받아오겠다
+ getParameter
+
+
+MIME-TYPE
+
+JDBC
+JDBC Driver 하나하나의 명칭
+
+오라클 연결할 때 4가지 셋
+#. Servlet
+ import java.sql.DriverManager
+ import java.sql.Connection
+ import java.sql.Statement
+ import java.sql.ResultSet
+
+#. JSP
+ JSP 스크립트릿 ==> 자바 영역
+ <%@ page import="java.sql.DriverManager" %>
+ <%@ page import="java.sql.Connection" %>
+ <%@ page import="java.sql.Statement" %>
+ <%@ page import="java.sql.ResultSet" %>
+ 
+ 선언문
+ 
+ 표현식
+
+
+
+jdbc driver 로드
+database 연결
+sql 처리
+database 연결해제
+
+
+<table width='800' border = '1'>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+
+MemberDAO
+MemberVO
+
+
+html이나 쿼리스트링을 넘기고 싶을 때
+  getparameter
+
+서블릿에 중간에 끼어드는 변수를 페이지에서 페이지로 넘기고 싶을 때
+ setatrribute 설정할때
+ getattribute 받아올때
+ removeattribute 지울때
+ 넘어갈땐 dispatch로
+
+9장 쿠키와 세션
+<hidden> : html 태그 중 숨기고 싶은 태그 설정
+
+쿠키 : 클라이언트 PC의 쿠키파일에 정보를 저장한 후 웹페이지들이 공유
+세션 : 서버 메모리에 정보를 저장한 후 웹페이지들이 공유
+
+	session.setAttribute("session", sesMesg);
+		=> 세션 유지될 동안
+	request.setAttribute("request", reqMesg);
+		=> 한페이지만 넘어감
+	*)계속 유지하고 싶다. 서블릿 컨텍스트 이용
+
+#scirptlet(스크립트릿)	<-- 내장 객체 out
+<% %>
+#선언식			<-- 메소드 , 변수 선언
+<%! %>
+#지시자			<-- jsp 실행시, 처음 구성 ==> 시험문제)
+ page : jsp 설정(import)
+ include : 다른 page 포함
+ taglib :태그 library 사용할때
+ jsp 주석은 앞단에서 못봄
+<%@ %>
+#표현식			<-- <% out,.print() %> 출력
+<%= %>
+#주석문
+<%-- --%>
+
+
+인클루드 디렉티브 태그 실행 과정
+ .jsp -> .java(자바코드) -> .class(서블릿 클래스 / HTML 태그)
